@@ -1,5 +1,6 @@
 import YearWithMultipleWinners from "../components/YearWithMultipleWinners"
 import StudiosWinners from "../components/StudiosWinners"
+import ProducersIntervalBetweenWins from "../components/ProducersIntervalBetweenWins"
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
           <StudiosWinners></StudiosWinners>
         </div>
         <div class="card col-6 mb-1">
+          <ProducersIntervalBetweenWins></ProducersIntervalBetweenWins>
         </div>
         <div class="card col-6 mb-1">
         </div>

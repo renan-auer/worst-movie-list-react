@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import movieService from "../services/movie.service";
 
-const Movie = () => {
+const YearWithMultipleWinners = () => {
   const [years, setYears] = useState([]);
 
   useEffect(() => {
@@ -43,4 +43,4 @@ const Movie = () => {
   );
 };
 
-export default Movie;
+export default YearWithMultipleWinners;

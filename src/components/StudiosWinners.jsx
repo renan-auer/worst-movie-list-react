@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import movieService from "../services/movie.service";
 
-const Movie = () => {
+const StudiosWinners = () => {
   const [studiosWinners, setStudiosWinners] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await movieService.getStudiosWinners();
-        const studios = response?.data?.studios
-        studios.sort((a, b) => b.winCount - a.winCount)
+        const studios = response?.data?.studios;
+        studios.sort((a, b) => b.winCount - a.winCount);
         setStudiosWinners(studios ? studios.splice(0, 3) : []);
       } catch (error) {
         console.error("Erro ao buscar dados:", error);
@@ -21,7 +21,7 @@ const Movie = () => {
 
   return (
     <>
-      <h4>List years with multiple winners</h4>
+      <h4>Top 3 studios with winners</h4>
 
       <table>
         <thead>
@@ -45,4 +45,4 @@ const Movie = () => {
   );
 };
 
-export default Movie;
+export default StudiosWinners;
