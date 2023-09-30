@@ -1,6 +1,7 @@
-import YearWithMultipleWinners from "../components/YearWithMultipleWinners"
-import StudiosWinners from "../components/StudiosWinners"
-import ProducersIntervalBetweenWins from "../components/ProducersIntervalBetweenWins"
+import YearWithMultipleWinners from "../components/YearWithMultipleWinners";
+import StudiosWinners from "../components/StudiosWinners";
+import ProducersIntervalBetweenWins from "../components/ProducersIntervalBetweenWins";
+import MovieWinnersByYear from "../components/MovieWinnersByYear";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
           <ProducersIntervalBetweenWins></ProducersIntervalBetweenWins>
         </div>
         <div class="card col-6 mb-1">
+          <MovieWinnersByYear></MovieWinnersByYear>
         </div>
       </div>
     </>
