@@ -18,7 +18,7 @@ Entre na pasta do projeto, certifique que você possua o Node.js instalado e fa�
   npm install
 ```
     
-Depois execute o seguinte comando para iniciar a aplicação Angular:
+Depois execute o seguinte comando para iniciar a aplicação React:
 
 ```bash
   npm run start
