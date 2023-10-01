@@ -25,12 +25,12 @@ const MovieWinnersByYear = () => {
 
   return (
     <>
-      <div class="row">
-        <div class="col-9">
+      <div className="row">
+        <div className="col-9">
           <input type="number" value={yearFilter} onChange={handleYearFilterChange} required/>
         </div>
-        <div class="col-2">
-          <button class="btn" onClick={fetchData}>Pesquisar</button>
+        <div className="col-2">
+          <button className="btn" onClick={fetchData}>Pesquisar</button>
         </div>
       </div>
       <h4>List movie winners by years</h4>

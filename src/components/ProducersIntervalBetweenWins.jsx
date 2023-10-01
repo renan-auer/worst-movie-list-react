@@ -26,7 +26,7 @@ const ProducersIntervalBetweenWins = () => {
       <h4>Producers with longest and shortest interval between wins</h4>
 
       <h3>Maximum</h3>
-      <table class="mb-1">
+      <table className="mb-1">
         <thead>
           <tr>
             <th>Producer</th>
