@@ -10,7 +10,6 @@ const ProducersIntervalBetweenWins = () => {
       try {
         const response = await movieService.getProducersIntervalWin();
         const producersInterval = response?.data;
-
         setMinProducerIntervalWin(producersInterval?.min);
         setMaxProducerIntervalWin(producersInterval?.max);
       } catch (error) {

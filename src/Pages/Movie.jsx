@@ -15,7 +15,6 @@ const Movie = () => {
 
   const fetchData = async (pageRequest) => {
     try {
-      console.log("page no fetchData " + page)
       const size = 15;
       const response = await movieService.getMovies(
         pageRequest,
