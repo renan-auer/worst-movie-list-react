@@ -5,10 +5,14 @@ import movieService from '../services/movie.service';
 jest.mock('../services/movie.service')
 
 test('renders StudiosWinners table with rows', async () => {
-  const mockData = {data: {studios: [{winCount: 1, name: 'Test'}] }}
+  const mockData = {data: {studios: [
+    {winCount: 1, name: 'Test'},
+    {winCount: 2, name: 'Test'},
+  ] }}
   movieService.getStudiosWinners.mockResolvedValue(mockData)
   render(<StudiosWinners/>)
 
-  await screen.findByText('Test');
+  const elements = await screen.findAllByText('Test');
 
+  expect(elements).toHaveLength(2);
 });

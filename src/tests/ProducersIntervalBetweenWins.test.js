@@ -7,7 +7,14 @@ jest.mock("../services/movie.service");
 test("renders ProducersIntervalBetweenWins table with rows", async () => {
   const mockData = {
     data: {
-      max: [],
+      max: [
+        {
+          producer: "Test",
+          interval: 2,
+          previousWin: 2019,
+          followingWin: 2020,
+        },
+      ],
       min: [
         {
           producer: "Test",
@@ -21,5 +28,7 @@ test("renders ProducersIntervalBetweenWins table with rows", async () => {
   movieService.getProducersIntervalWin.mockResolvedValue(mockData);
   render(<ProducersIntervalBetweenWins />);
 
-  await screen.findByText("Test");
+  const elements = await screen.findAllByText("Test");
+
+  expect(elements).toHaveLength(2);
 });

@@ -11,6 +11,10 @@ test("renders YearWithMultipleWinners table with rows", async () => {
         {
           year: 2019,
           winnerCount: 20
+        },
+        {
+          year: 2020,
+          winnerCount: 20
         }
       ],
     }
@@ -18,5 +22,9 @@ test("renders YearWithMultipleWinners table with rows", async () => {
   movieService.getYearsWithMultipleWinners.mockResolvedValue(mockData);
   render(<YearWithMultipleWinners />);
 
-  await screen.findByText("2019");
+  const element2019 = await screen.findByText("2019");
+  const element2020 = await screen.findByText("2020");
+
+  expect(element2019).toBeInTheDocument();
+  expect(element2020).toBeInTheDocument();
 });

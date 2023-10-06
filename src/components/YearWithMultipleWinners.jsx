@@ -31,7 +31,7 @@ const YearWithMultipleWinners = () => {
         <tbody>
           {years.map((year) => {
             return (
-              <tr>
+              <tr  key={year.year}>
                 <td>{year.year}</td>
                 <td>{year.winnerCount}</td>
               </tr>

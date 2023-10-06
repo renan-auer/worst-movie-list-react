@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import movieService from "../services/movie.service";
 
 const MovieWinnersByYear = () => {
-  const [yearFilter, setYearFilters] = useState(2019);
+  const [yearFilter, setYearFilters] = useState(null);
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const MovieWinnersByYear = () => {
         <tbody>
           {movies.map((movie) => {
             return (
-              <tr>
+              <tr key={movie.id}>
                 <td>{movie.id}</td>
                 <td>{movie.year}</td>
                 <td>{movie.title}</td>

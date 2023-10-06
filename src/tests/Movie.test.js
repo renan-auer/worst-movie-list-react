@@ -11,15 +11,23 @@ test("renders Movie table with rows", async () => {
       content: [
         {
           id: 1,
-          title: 'Test',
+          title: "Test",
           year: 2019,
-          winner: true
-        }
+          winner: true,
+        },
+        {
+          id: 2,
+          title: "Test",
+          year: 2020,
+          winner: true,
+        },
       ],
-    }
+    },
   };
   movieService.getMovies.mockResolvedValue(mockData);
   render(<Movie />);
 
-  await screen.findByText("Test");
+  const elements = await screen.findAllByText("Test");
+
+  expect(elements).toHaveLength(2);
 });

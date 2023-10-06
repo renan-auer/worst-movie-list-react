@@ -10,17 +10,17 @@ const Movie = () => {
   const [winnerFilter, setWinnerFilter] = useState("");
 
   useEffect(() => {
-    fetchData(0);
+    fetchData(0, null, null);
   }, []);
 
-  const fetchData = async (pageRequest) => {
+  const fetchData = async (pageRequest, yearFilterParam, winnerFilterParam) => {
     try {
       const size = 15;
       const response = await movieService.getMovies(
         pageRequest,
         size,
-        winnerFilter,
-        yearFilter
+        winnerFilterParam,
+        yearFilterParam
       );
       setMovies(response?.data?.content);
       setTotalPages(response?.data?.totalPages);
@@ -30,15 +30,17 @@ const Movie = () => {
   };
 
   const winnerChanged = (event) => {
-    setWinnerFilter(event.target.value);
+    const value = event.target.value
+    setWinnerFilter(value);
     setPage(0);
-    fetchData(0);
+    fetchData(0, yearFilter, value);
   };
 
   const yearChanged = (event) => {
-    setYearFilter(event.target.value);
+    const value = event.target.value
+    setYearFilter(value);
     setPage(0);
-    fetchData(0);
+    fetchData(0, value, winnerFilter);
   };
 
   const pageSelected = (page) => {
@@ -61,10 +63,10 @@ const Movie = () => {
             <th>Title</th>
             <th className="center">
               Winner
-              <select value={yearFilter} onChange={winnerChanged}>
+              <select value={winnerFilter} onChange={winnerChanged}>
                 <option></option>
                 <option value="true">Yes</option>
-                <option value="false">No</option>
+                <option  value="false">No</option>
               </select>
             </th>
           </tr>

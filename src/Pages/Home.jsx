@@ -7,17 +7,25 @@ const Home = () => {
   return (
     <>
       <div class="row">
-        <div class="card col-6 mb-1">
-          <YearWithMultipleWinners></YearWithMultipleWinners>
+        <div class="col-6 mb-1">
+          <div class="card">
+            <YearWithMultipleWinners></YearWithMultipleWinners>
+          </div>
         </div>
-        <div class="card col-6 mb-1">
-          <StudiosWinners></StudiosWinners>
+        <div class="col-6 mb-1">
+          <div class="card">
+            <StudiosWinners></StudiosWinners>
+          </div>
         </div>
-        <div class="card col-6 mb-1">
-          <ProducersIntervalBetweenWins></ProducersIntervalBetweenWins>
+        <div class="col-6 mb-1">
+          <div class="card">
+            <ProducersIntervalBetweenWins></ProducersIntervalBetweenWins>
+          </div>
         </div>
-        <div class="card col-6 mb-1">
-          <MovieWinnersByYear></MovieWinnersByYear>
+        <div class="col-6 mb-1">
+          <div class="card">
+            <MovieWinnersByYear></MovieWinnersByYear>
+          </div>
         </div>
       </div>
     </>

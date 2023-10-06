@@ -33,7 +33,7 @@ const StudiosWinners = () => {
         <tbody>
           {studiosWinners.map((studio) => {
             return (
-              <tr>
+              <tr key={studio.name}>
                 <td>{studio.name}</td>
                 <td>{studio.winCount}</td>
               </tr>

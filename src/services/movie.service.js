@@ -6,9 +6,10 @@ const clienteService = {
     getProducersIntervalWin: () => axiosClient.get(`?projection=max-min-win-interval-for-producers`),
     getMoviesByYear: (year) => axiosClient.get(`?winner=true&year=${year}`),
     getMovies: (page, size, winner, year) => {
+        console.log(winner)
         let query = `?page=${page}&size=${size}`
         if (year) query += `&year=${year}`
-        if (winner === true || winner === false) query += `&winner=${winner}`
+        if (winner === 'true' || winner === 'false') query += `&winner=${winner}`
         return axiosClient.get(query)
     },
 }

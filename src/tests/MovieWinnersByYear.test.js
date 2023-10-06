@@ -11,11 +11,18 @@ test("renders MovieWinnersByYear table with rows", async () => {
         id: 1,
         title: 'Test',
         year: 2019
+      },
+      {
+        id: 2,
+        title: 'Test',
+        year: 2019
       }
     ],
   };
   movieService.getMoviesByYear.mockResolvedValue(mockData);
   render(<MovieWinnersByYear />);
 
-  await screen.findByText("Test");
+  const elements = await screen.findAllByText("Test");
+
+  expect(elements).toHaveLength(2);
 });

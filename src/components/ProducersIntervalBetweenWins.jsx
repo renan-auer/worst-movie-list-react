@@ -37,7 +37,7 @@ const ProducersIntervalBetweenWins = () => {
         <tbody>
           {maxProducerIntervalWin.map((producer) => {
             return (
-              <tr>
+              <tr key={producer.producer}>
                 <td>{producer.producer}</td>
                 <td>{producer.interval}</td>
                 <td>{producer.previousWin}</td>
